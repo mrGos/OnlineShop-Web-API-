@@ -12,6 +12,7 @@ namespace TeduShop.Model.Models
     public class Tag
     {
         [Key]
+        [Column(TypeName = "varchar")]
         [MaxLength(50)]
         public String ID { get; set; }
 
