@@ -22,18 +22,13 @@ namespace TeduShop.Web.Api
         {
             return CreateHttpRespone(request, () =>
             {
-                HttpResponseMessage respone = null;
-                if (!ModelState.IsValid)
-                {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var listCategory = _postCategoryService.GetAll();
 
+                request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
 
-                    respone = request.CreateResponse(HttpStatusCode.Created, listCategory);
-                }
+                var listCategory = _postCategoryService.GetAll();
+
+                HttpResponseMessage respone = request.CreateResponse(HttpStatusCode.Created, listCategory);
+
                 return respone;
             });
         }
