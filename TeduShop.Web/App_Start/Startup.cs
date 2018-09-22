@@ -1,27 +1,33 @@
 ﻿using System;
 using System.Reflection;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
+using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.DataProtection;
 using Owin;
 using TeduShop.Data;
 using TeduShop.Data.Infrastructure;
 using TeduShop.Data.Repositories;
+using TeduShop.Model.Models;
 using TeduShop.Service;
 
 [assembly: OwinStartup(typeof(TeduShop.Web.App_Start.Startup))]
 
 namespace TeduShop.Web.App_Start
 {
-    public class Startup
+    public partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
             ConfigAutofac(app);
+            ConfigureAuth(app);
         }
 
         private void ConfigAutofac(IAppBuilder app)
@@ -30,6 +36,7 @@ namespace TeduShop.Web.App_Start
 
             //1 register controller
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
+
             //2 register web api controller
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
@@ -39,6 +46,17 @@ namespace TeduShop.Web.App_Start
 
             builder.RegisterType<TeduShopDbContext>().AsSelf().InstancePerRequest();
 
+            //3. register Asp.net Identity
+
+            builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
+            builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
+            builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
+            builder.Register<IAuthenticationManager>(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
+            builder.Register<IDataProtectionProvider>(c => app.GetDataProtectionProvider()).InstancePerRequest();
+
+
+
+            //
             //Repositories
             builder.RegisterAssemblyTypes(typeof(PostCategoryRepository).Assembly)
                 .Where(t => t.Name.EndsWith("Repository"))
