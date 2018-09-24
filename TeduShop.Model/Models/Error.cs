@@ -8,12 +8,12 @@ namespace TeduShop.Model.Models
     public class Error
     {
         [Key]
-        public int ID { get; set; }
+        public int ID { set; get; }
 
-        public string Message { get; set; }
+        public string Message { set; get; }
 
-        public string StackTrace { get; set; }
+        public string StackTrace { set; get; }
 
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { set; get; }
     }
 }

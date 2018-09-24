@@ -20,9 +20,10 @@ namespace TeduShop.Data.Infrastructure
         {
             get { return dbContext ?? (dbContext = dbFactory.Init()); }
         }
+
         public void Commit()
         {
-            dbContext.SaveChanges();
+            DbContext.SaveChanges();
         }
     }
 }

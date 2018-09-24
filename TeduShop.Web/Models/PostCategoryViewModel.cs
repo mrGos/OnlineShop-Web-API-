@@ -7,39 +7,37 @@ namespace TeduShop.Web.Models
 {
     public class PostCategoryViewModel
     {
-        public int ID { get; set; }
-
-        public string Name { get; set; }
-
-
-        public string Alias { get; set; }
+        public int ID { set; get; }
+        public string Name { set; get; }
 
 
-        public string Description { get; set; }
+        public string Alias { set; get; }
+        public string Description { set; get; }
 
-        public int? ParentID { get; set; }
-        public int? DisplayOrder { get; set; }
+        public int? ParentID { set; get; }
+        public int? DisplayOrder { set; get; }
 
+        public string Image { set; get; }
 
-        public string Image { get; set; }
+        public bool? HomeFlag { set; get; }
 
-        public bool? HomeFlag { get; set; }
-        public DateTime? CreatedDate { get; set; }
+        public virtual IEnumerable<PostViewModel> Posts { set; get; }
 
-
-        public string CreatedBy { get; set; }
-
-        public DateTime? UpdateTime { get; set; }
+        public DateTime? CreatedDate { set; get; }
 
 
-        public string UpdatedBy { get; set; }
+        public string CreatedBy { set; get; }
+
+        public DateTime? UpdatedDate { set; get; }
 
 
-        public string MetaKeyword { get; set; }
+        public string UpdatedBy { set; get; }
 
-        public string MetaDescription { get; set; }
 
-        public bool Status { get; set; }
-        public virtual IEnumerable<PostViewModel> Posts { get; set; }
+        public string MetaKeyword { set; get; }
+
+        public string MetaDescription { set; get; }
+
+        public bool Status { set; get; }
     }
 }

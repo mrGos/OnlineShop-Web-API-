@@ -12,7 +12,7 @@
         protected override void DisposeCore()
         {
             if (dbContext != null)
-                base.DisposeCore();
+                dbContext.Dispose();
         }
     }
 }

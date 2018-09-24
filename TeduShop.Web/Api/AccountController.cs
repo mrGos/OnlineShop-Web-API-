@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-
 using TeduShop.Web.App_Start;
 
 namespace TeduShop.Web.Api
@@ -21,8 +20,8 @@ namespace TeduShop.Web.Api
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
-            SignInManager = signInManager;
             UserManager = userManager;
+            SignInManager = signInManager;
         }
 
         public ApplicationSignInManager SignInManager
@@ -49,19 +48,21 @@ namespace TeduShop.Web.Api
             }
         }
 
-        [System.Web.Http.HttpPost]
-        [System.Web.Http.AllowAnonymous]
+        [HttpPost]
+        [AllowAnonymous]
         [Route("login")]
-        public async Task<HttpResponseMessage> Login(HttpRequestMessage request, string usrName, string password, bool rememberMe)
+        public async Task<HttpResponseMessage> Login(HttpRequestMessage request, string userName, string password, bool rememberMe)
         {
             if (!ModelState.IsValid)
             {
                 return request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
-
-            var result = await SignInManager.PasswordSignInAsync(usrName, password, rememberMe, shouldLockout: true);
+            // This doesn't count login failures towards account lockout
+            // To enable password failures to trigger account lockout, change to shouldLockout: true
+            var result = await SignInManager.PasswordSignInAsync(userName, password, rememberMe, shouldLockout: false);
             return request.CreateResponse(HttpStatusCode.OK, result);
-
         }
+
+
     }
 }

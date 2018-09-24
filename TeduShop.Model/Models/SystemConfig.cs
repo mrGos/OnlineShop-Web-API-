@@ -7,16 +7,16 @@ namespace TeduShop.Model.Models
     public class SystemConfig
     {
         [Key]
-        public int ID { get; set; }
+        public int ID { set; get; }
 
         [Required]
         [Column(TypeName = "varchar")]
         [MaxLength(50)]
-        public string Code { get; set; }
+        public string Code { set; get; }
 
         [MaxLength(50)]
-        public string ValueString { get; set; }
+        public string ValueString { set; get; }
 
-        public int? ValueInt { get; set; }
+        public int? ValueInt { set; get; }
     }
 }

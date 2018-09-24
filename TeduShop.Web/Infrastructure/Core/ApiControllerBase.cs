@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -15,17 +13,18 @@ namespace TeduShop.Web.Infrastructure.Core
     public class ApiControllerBase : ApiController
     {
         private IErrorService _errorService;
+
         public ApiControllerBase(IErrorService errorService)
         {
             this._errorService = errorService;
         }
 
-        protected HttpResponseMessage CreateHttpRespone(HttpRequestMessage requestMeaage, Func<HttpResponseMessage> function)
+        protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage requestMessage, Func<HttpResponseMessage> function)
         {
-            HttpResponseMessage respone = null;
+            HttpResponseMessage response = null;
             try
             {
-                respone = function.Invoke();
+                response = function.Invoke();
             }
             catch (DbEntityValidationException ex)
             {
@@ -37,18 +36,20 @@ namespace TeduShop.Web.Infrastructure.Core
                         Trace.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
                     }
                 }
+                LogError(ex);
+                response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.InnerException.Message);
             }
             catch (DbUpdateException dbEx)
             {
                 LogError(dbEx);
-                respone = requestMeaage.CreateErrorResponse(HttpStatusCode.BadRequest, dbEx.InnerException.Message);
+                response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, dbEx.InnerException.Message);
             }
             catch (Exception ex)
             {
                 LogError(ex);
-                respone = requestMeaage.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+                response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
-            return respone;
+            return response;
         }
 
         private void LogError(Exception ex)
@@ -61,11 +62,9 @@ namespace TeduShop.Web.Infrastructure.Core
                 error.StackTrace = ex.StackTrace;
                 _errorService.Create(error);
                 _errorService.Save();
-
             }
             catch
             {
-
             }
         }
     }

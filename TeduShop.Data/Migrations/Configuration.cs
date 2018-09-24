@@ -1,8 +1,9 @@
-namespace TeduShop.Data.Migrations
+﻿namespace TeduShop.Data.Migrations
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -17,9 +18,10 @@ namespace TeduShop.Data.Migrations
 
         protected override void Seed(TeduShop.Data.TeduShopDbContext context)
         {
+            CreateProductCategorySample(context);
             //  This method will be called after migrating to the latest version.
 
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
+            /*var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new TeduShopDbContext()));
 
             var user = new ApplicationUser()
@@ -40,10 +42,28 @@ namespace TeduShop.Data.Migrations
             }
 
             var adminUser = manager.FindByEmail("16520570@gm.uit.edu.vn");
-            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });*/
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+        }
+
+
+
+        private void CreateProductCategorySample(TeduShopDbContext context)
+        {
+            if (context.ProductCategories.Count() == 0)
+            {
+                List<ProductCategory> listProductCategory = new List<ProductCategory>()
+            {
+                new ProductCategory(){Name="Điện lạnh",Alias="dien-lanh",Status=true},
+                new ProductCategory(){Name="Viễn thông",Alias="vien-thong",Status=true},
+                new ProductCategory(){Name="Đồ gia dụng",Alias="do-gia-dung",Status=true},
+                new ProductCategory(){Name="Mỹ phẩm",Alias="my-pham",Status=true},
+            };
+                context.ProductCategories.AddRange(listProductCategory);
+                context.SaveChanges();
+            }
         }
     }
 }

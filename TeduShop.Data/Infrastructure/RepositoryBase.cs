@@ -48,7 +48,6 @@ namespace TeduShop.Data.Infrastructure
         {
             return dbSet.Remove(entity);
         }
-
         public virtual T Delete(int id)
         {
             var entity = dbSet.Find(id);
@@ -58,9 +57,7 @@ namespace TeduShop.Data.Infrastructure
         {
             IEnumerable<T> objects = dbSet.Where<T>(where).AsEnumerable();
             foreach (T obj in objects)
-            {
                 dbSet.Remove(obj);
-            }
         }
 
         public virtual T GetSingleById(int id)
@@ -122,7 +119,7 @@ namespace TeduShop.Data.Infrastructure
         public virtual IEnumerable<T> GetMultiPaging(Expression<Func<T, bool>> predicate, out int total, int index = 0, int size = 20, string[] includes = null)
         {
             int skipCount = index * size;
-            IEnumerable<T> _resetSet;
+            IQueryable<T> _resetSet;
 
             //HANDLE INCLUDES FOR ASSOCIATED OBJECTS IF APPLICABLE
             if (includes != null && includes.Count() > 0)

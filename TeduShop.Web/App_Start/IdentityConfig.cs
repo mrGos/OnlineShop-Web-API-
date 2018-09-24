@@ -13,9 +13,9 @@ namespace TeduShop.Web.App_Start
 {
     public class ApplicationUserStore : UserStore<ApplicationUser>
     {
-        public ApplicationUserStore(TeduShopDbContext context) : base(context)
+        public ApplicationUserStore(TeduShopDbContext context)
+            : base(context)
         {
-
         }
     }
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
@@ -52,8 +52,6 @@ namespace TeduShop.Web.App_Start
 
             manager.MaxFailedAccessAttemptsBeforeLockout = 5;
 
-
-
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
@@ -74,7 +72,7 @@ namespace TeduShop.Web.App_Start
 
         public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
         {
-            return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
+            return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager,DefaultAuthenticationTypes.ApplicationCookie);
         }
 
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
