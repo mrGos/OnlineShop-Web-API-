@@ -15,7 +15,7 @@ using System.Web.Script.Serialization;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/productcategory")]
-    [Authorize]
+    //[Authorize]
     public class ProductCategoryController : ApiControllerBase
     {
         #region Initialize

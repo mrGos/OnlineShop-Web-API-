@@ -3,21 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrator Page</title>
-    <h1>This is a Admin Page</h1>
+    <title>Trang quản trị</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Assets/admin/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Assets/admin/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link href="~/Content/Ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Assets/admin/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link href="~/Assets/admin/css/AdminLTE.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Assets/admin/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="~/Assets/admin/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/Assets/admin/css/skins/_all-skins.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,13 +25,14 @@
     <![endif]-->
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng-app="shop">
     <!-- Site wrapper -->
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
-            <a href="#" class="logo">
+            <a href="../../index2.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
@@ -228,16 +228,15 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-files-o"></i>
-                            <span>Layout Options</span>
+                            <span>Sản phẩm</span>
                             <span class="pull-right-container">
                                 <span class="label label-primary pull-right">4</span>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                            <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                            <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                            <li><a ui-sref="product_categories"><i class="fa fa-circle-o"></i> Danh mục sản phẩm</a></li>
+                            <li><a ui-sref="products"><i class="fa fa-circle-o"></i> Sản phẩm</a></li>
+
                         </ul>
                     </li>
                     <li>
@@ -572,21 +571,25 @@
     </div>
     <!-- ./wrapper -->
     <!-- jQuery 3 -->
-    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Assets/admin/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Assets/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- SlimScroll -->
-    <script src="~/Scripts/jquery.slimscroll.js"></script>
+    <script src="~/Assets/admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
-    <script src="~/Scripts/fastclick.js"></script>
+    <script src="~/Assets/admin/bower_components/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
-    <script src="~/Assets/admin/js/adminlte.js"></script>
+    <script src="/Assets/admin/js/app.min.js"></script>
+
     <!-- begin angularjs -->
     <script src="~/Scripts/angular.js"></script>
-    <script src="~/Scripts/AngularUI/ui-router.js"></script>
+    <script src="~/Scripts/angular-ui-router.js"></script>
     <script src="~/app/shared/modules/shop.common.js"></script>
+    <script src="~/app/shared/services/apiService.js"></script>
     <script src="~/app/components/products/products.module.js"></script>
+    <script src="~/app/components/product_categories/productCategories.module.js"></script>
     <script src="~/app/app.js"></script>
+    <script src="~/app/components/product_categories/productCategoryListController.js"></script>
     <script src="~/app/components/products/productAddController.js"></script>
     <script src="~/app/components/products/productListController.js"></script>
     <script src="~/app/components/home/homeController.js"></script>
