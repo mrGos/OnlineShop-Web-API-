@@ -3263,6 +3263,8 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\AngularUI\ui-router.js" />
     <Content Include="Scripts\AngularUI\ui-router.min.js" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -3498,6 +3500,7 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="package.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -4243,6 +4246,18 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\jquery.slimscroll.js" />
     <Content Include="Scripts\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\ngbootbox\dist\ngBootbox.js" />
+    <Content Include="Scripts\ngbootbox\dist\ngBootbox.min.js" />
+    <Content Include="Scripts\ngbootbox\examples\example-1\app.js" />
+    <Content Include="Scripts\ngbootbox\examples\example-1\custom-dialog.tpl.html" />
+    <Content Include="Scripts\ngbootbox\examples\example-1\index.html" />
+    <Content Include="Scripts\ngbootbox\examples\example-2\app.js" />
+    <Content Include="Scripts\ngbootbox\examples\example-2\index.html" />
+    <Content Include="Scripts\ngbootbox\examples\example-2\main.js" />
+    <Content Include="Scripts\ngbootbox\examples\example-2\require.js" />
+    <Content Include="Scripts\ngbootbox\examples\index.html" />
+    <Content Include="Scripts\ngbootbox\gulpfile.js" />
+    <Content Include="Scripts\ngbootbox\ngBootbox.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -4272,6 +4287,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Scripts\ngbootbox\.npmignore" />
+    <Content Include="Scripts\ngbootbox\bower.json" />
+    <Content Include="Scripts\ngbootbox\package.json" />
+    <Content Include="Scripts\ngbootbox\README.md" />
+    <Content Include="Scripts\ngbootbox\tsd.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
@@ -4311,6 +4331,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\ngbootbox\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\ngbootbox\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\ngbootbox\typings\tsd.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
