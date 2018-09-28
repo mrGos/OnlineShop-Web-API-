@@ -14,9 +14,9 @@
             $http.put(url, data).then(function (result) {
                 success(result);
             }, function (error) {
-                if (error.status = 401) {
+                if (error.status === 401) {
                     notificationService.displayError('Authentication is required.');
-                } else if (failure != null) {
+                } else if (failure !== null) {
                     failure(error);
                 }
 
@@ -27,9 +27,9 @@
             $http.post(url, data).then(function (result) {
                 success(result);
             }, function (error) {
-                if (error.status = 401) {
+                if (error.status === 401) {
                     notificationService.displayError('Authentication is required.');
-                } else if (failure != null) {
+                } else if (failure !== null) {
                     failure(error);
                 }
 

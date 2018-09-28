@@ -32,7 +32,7 @@
                         if (end > $scope.pagesCount) { end = $scope.pagesCount; }
 
                         var ret = [];
-                        for (var i = start; i != end; ++i) {
+                        for (var i = start; i !== end; ++i) {
                             ret.push(i);
                         }
 

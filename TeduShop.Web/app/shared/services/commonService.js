@@ -8,7 +8,7 @@
             getSeoTitle: getSeoTitle
         }
         function getSeoTitle(input) {
-            if (input == undefined || input == '')
+            if (input === undefined || input === '')
                 return '';
             //Đổi chữ hoa thành chữ thường
             var slug = input.toLowerCase();
