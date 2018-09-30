@@ -302,7 +302,10 @@
     <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\modules\shop.common.js" />
     <Content Include="app\shared\services\apiService.js" />
+    <Content Include="app\shared\services\authData.js" />
+    <Content Include="app\shared\services\authenticationService.js" />
     <Content Include="app\shared\services\commonService.js" />
+    <Content Include="app\shared\services\loginService.js" />
     <Content Include="app\shared\services\notificationService.js" />
     <Content Include="app\shared\views\baseView.html" />
     <Content Include="Assets\admin\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
@@ -3231,6 +3234,8 @@
     <Content Include="Content\Ionicons\src\woman.svg" />
     <Content Include="Content\Ionicons\src\wrench.svg" />
     <Content Include="Content\Ionicons\src\xbox.svg" />
+    <Content Include="Content\loading-bar.css" />
+    <Content Include="Content\loading-bar.min.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="css\font-awesome.css" />
@@ -3250,6 +3255,8 @@
     <Content Include="Scripts\angular-csp.css" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-local-storage.js" />
+    <Content Include="Scripts\angular-local-storage.min.js" />
     <Content Include="Scripts\angular-message-format.js" />
     <Content Include="Scripts\angular-message-format.min.js" />
     <Content Include="Scripts\angular-messages.js" />
@@ -6875,6 +6882,7 @@
     <Content Include="Scripts\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Scripts\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Scripts\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\angular-local-storage.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -7620,6 +7628,8 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\jquery.slimscroll.js" />
     <Content Include="Scripts\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\loading-bar.js" />
+    <Content Include="Scripts\loading-bar.min.js" />
     <Content Include="Scripts\ngbootbox\dist\ngBootbox.js" />
     <Content Include="Scripts\ngbootbox\dist\ngBootbox.min.js" />
     <Content Include="Scripts\ngbootbox\examples\example-1\app.js" />
