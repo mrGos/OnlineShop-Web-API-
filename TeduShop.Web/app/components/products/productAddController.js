@@ -19,7 +19,8 @@
         $scope.AddProduct = AddProduct;
 
         function AddProduct() {
-            apiService.post('api/product/create', $scope.product, function (result) {
+            $scope.product.MoreImages = JSON.stringify($scope.moreImages);
+            apiService.post('/api/product/create', $scope.product, function (result) {
                 notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
                 $state.go('products');
             }, function (error) {
@@ -39,7 +40,23 @@
         function ChooseImage() {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
-                $scope.product.Image = fileUrl;
+                $scope.$apply(function () {
+                    $scope.product.Image = fileUrl;
+                })
+            }
+            finder.popup();
+        }
+
+
+        $scope.moreImages = [];
+        $scope.ChooseMoreImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    if ($scope.moreImages.indexOf(fileUrl) <= -1) {
+                        $scope.moreImages.push(fileUrl);
+                    }
+                })
             }
             finder.popup();
         }
