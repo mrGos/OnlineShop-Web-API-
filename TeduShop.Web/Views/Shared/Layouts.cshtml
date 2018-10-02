@@ -23,7 +23,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
     <!--header-->
     @{ Html.RenderAction("Header", "Home");}
-    <!---->
+    <!--/header-->
+
     <div class="container">
         @RenderBody()
     </div>
@@ -239,7 +240,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="clearfix"> </div>
     </div>
 
+    <!-- Category -->
     @{ Html.RenderAction("Category", "Home");}
+    <!-- /Category -->
 
     <div class="clearfix"> </div>
     </div>
