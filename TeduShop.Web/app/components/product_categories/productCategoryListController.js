@@ -31,7 +31,7 @@
                     checkedProductCategories: JSON.stringify(listId)
                 }
             }
-            apiService.del('api/productcategory/deletemulti', config, function (result) {
+            apiService.del('/api/productcategory/deletemulti', config, function (result) {
                 notificationService.displaySuccess('Xóa thành công ' + result.data + ' bản ghi.');
                 search();
             }, function (error) {
