@@ -6124,6 +6124,7 @@
     <Content Include="Scripts\ng-ckeditor\README.md" />
     <Content Include="Scripts\ng-ckeditor\src\styles\ng-ckeditor.less" />
     <Content Include="Views\Product\ListByTag.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
