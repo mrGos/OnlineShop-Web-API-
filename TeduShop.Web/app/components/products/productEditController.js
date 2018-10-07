@@ -13,6 +13,11 @@
             $scope.product.Alias = commonService.getSeoTitle($scope.product.Name);
         }
 
+        $scope.ckeditorOptions = {
+            language: 'vi',
+            height: '200px'
+        }
+
         $scope.UpdateProduct = UpdateProduct;
 
         function UpdateProduct() {
@@ -24,6 +29,7 @@
                 notificationService.displayError(result.data.Name + ' cập nhật không thành công.');
             });
         }
+
 
         function loadProductDetail() {
             apiService.get('/api/product/getbyid/' + $stateParams.id, null, function (result) {

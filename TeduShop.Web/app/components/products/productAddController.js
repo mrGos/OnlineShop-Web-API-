@@ -16,6 +16,10 @@
             $scope.product.Alias = commonService.getSeoTitle($scope.product.Name);
         }
 
+        $scope.ckeditorOptions = {
+            language: 'vi',
+            height: '200px'
+        }
         $scope.AddProduct = AddProduct;
 
         function AddProduct() {
