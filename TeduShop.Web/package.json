@@ -1,0 +1,12 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "devDependencies": {
+    "ckeditor": "^4.9.2",
+    "install": "^0.12.1",
+    "jquery-ui": "^1.12.1",
+    "ng-ckeditor": "^2.0.5",
+    "ngbootbox": "^0.2.0",
+    "npm": "^6.4.1"
+  }
+}

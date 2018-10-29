@@ -1,0 +1,47 @@
+﻿<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Big shope A Ecommerce Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+    <link href="/Assets/client/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <!--theme-style-->
+    <link href="/Assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Assets/client/css/custom.css" rel="stylesheet" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+
+</head>
+<body>
+    <!--header-->
+    @{ Html.RenderAction("Header", "Home");}
+    <!--/header-->
+
+    <div class="container">
+        @RenderBody()
+        @{ Html.RenderAction("Category", "Home");}
+    </div>
+
+
+    @{ Html.RenderAction("Footer", "Home");}
+    <div class="clearfix"> </div>
+
+
+    <script src="/Assets/client/js/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <!--script-->
+
+    <script src="~/Assets/client/js/common.js"></script>
+    @RenderSection("footerJS", required: false)
+</body>
+</html>
