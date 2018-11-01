@@ -3,7 +3,11 @@
 (function () {
     angular.module('shop',
         ['shop.products',
+            'shop.application_groups',
             'shop.product_categories',
+            'shop.application_roles',
+            'shop.application_users',
+            'shop.statistics',
             'shop.common'])
         .config(config)
         .config(configAuthentication);
@@ -42,7 +46,7 @@
                     return $q.reject(rejection);
                 },
                 response: function (response) {
-                    if (response.status === "401") {
+                    if (response.status == "401") {
                         $location.path('/login');
                     }
                     //the same response/modified/or a new one need to be returned.
@@ -50,7 +54,7 @@
                 },
                 responseError: function (rejection) {
 
-                    if (rejection.status === "401") {
+                    if (rejection.status == "401") {
                         $location.path('/login');
                     }
                     return $q.reject(rejection);

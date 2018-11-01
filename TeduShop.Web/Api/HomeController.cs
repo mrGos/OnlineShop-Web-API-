@@ -10,7 +10,7 @@ using TeduShop.Web.Infrastructure.Core;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/home")]
-    //[Authorize]
+    [Authorize]
     public class HomeController : ApiControllerBase
     {
         IErrorService _errorService;
@@ -23,7 +23,7 @@ namespace TeduShop.Web.Api
         [Route("TestMethod")]
         public string TestMethod()
         {
-            return "Hello, Member. ";
+            return "Hello, TEDU Member. ";
         }
     }
 }

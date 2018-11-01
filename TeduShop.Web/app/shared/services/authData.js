@@ -1,6 +1,6 @@
 ﻿(function (app) {
     'use strict';
-    app.service('authData', [function () {
+    app.factory('authData', [function () {
         var authDataFactory = {};
 
         var authentication = {
