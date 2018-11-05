@@ -1,4 +1,4 @@
-﻿
+﻿/// <reference path="/Assets/admin/libs/angular/angular.js" />
 
 (function (app) {
     app.factory('apiService', apiService);
@@ -21,7 +21,7 @@
                 if (error.status === 401) {
                     notificationService.displayError('Authenticate is required.');
                 }
-                else if (failure !== null) {
+                else if (failure != null) {
                     failure(error);
                 }
 
@@ -36,7 +36,7 @@
                 if (error.status === 401) {
                     notificationService.displayError('Authenticate is required.');
                 }
-                else if (failure !== null) {
+                else if (failure != null) {
                     failure(error);
                 }
 
@@ -51,7 +51,7 @@
                 if (error.status === 401) {
                     notificationService.displayError('Authenticate is required.');
                 }
-                else if (failure !== null) {
+                else if (failure != null) {
                     failure(error);
                 }
 

@@ -63,6 +63,14 @@ namespace TeduShop.Web.Api
             return request.CreateResponse(HttpStatusCode.OK, result);
         }
 
-
+        [HttpPost]
+        [Authorize]
+        [Route("logout")]
+        public HttpResponseMessage Logout(HttpRequestMessage request)
+        {
+            var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+            authenticationManager.SignOut(Microsoft.AspNet.Identity.DefaultAuthenticationTypes.ApplicationCookie);
+            return request.CreateResponse(HttpStatusCode.OK, new { success = true });
+        }
     }
 }

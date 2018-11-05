@@ -22,7 +22,7 @@
             CreateSlide(context);
             //  This method will be called after migrating to the latest version.
             CreatePage(context);
-
+            CreateContactDetails(context);
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
@@ -114,6 +114,26 @@
                     Status = true
                 };
                 context.Pages.Add(page);
+                context.SaveChanges();
+            }
+        }
+        private void CreateContactDetails(TeduShopDbContext context)
+        {
+            if (context.ContactDetails.Count() == 0)
+            {
+                var contactDetail = new ContactDetail()
+                {
+                    Name = "Shop bán hàng .NET",
+                    Address = "Khu phố 6, P.Linh Trung, Q.Thủ Đức, Tp.Hồ Chí Minh.",
+                    Email = "16520570@gm.uit.edu.vn",
+                    Lat = 10.8702164,
+                    Lng = 106.8006988,
+                    Phone = "0938422612",
+                    Website = "https://www.uit.edu.vn/",
+                    Other = "",
+                    Status = true
+                };
+                context.ContactDetails.Add(contactDetail);
                 context.SaveChanges();
             }
         }

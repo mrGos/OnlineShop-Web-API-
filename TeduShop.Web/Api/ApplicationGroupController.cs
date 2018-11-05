@@ -90,7 +90,7 @@ namespace TeduShop.Web.Api
                 return request.CreateErrorResponse(HttpStatusCode.NoContent, "No group");
             }
             var listRole = _appRoleService.GetListRoleByGroupId(appGroupViewModel.ID);
-            appGroupViewModel.Roles = Mapper.Map<IEnumerable<ApplicationRole>,IEnumerable<ApplicationRoleViewModel>>(listRole);
+            appGroupViewModel.Roles = Mapper.Map<IEnumerable<ApplicationRole>, IEnumerable<ApplicationRoleViewModel>>(listRole);
             return request.CreateResponse(HttpStatusCode.OK, appGroupViewModel);
         }
 

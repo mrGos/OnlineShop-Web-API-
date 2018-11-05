@@ -9,7 +9,7 @@
             $state.go('login');
         }
         $scope.authentication = authData.authenticationData;
-
-        //authenticationService.validateRequest();
+        //$scope.sideBar = "/app/shared/views/sideBar.html";
+        ////authenticationService.validateRequest();
     }
 })(angular.module('shop'));
