@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeduShop.Common", "TeduShop.Common\TeduShop.Common.csproj", "{FD6BAF41-2887-42F3-82FC-0DF386B84472}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Common", "TeduShop.Common\Shop.Common.csproj", "{FD6BAF41-2887-42F3-82FC-0DF386B84472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeduShop.Model", "TeduShop.Model\TeduShop.Model.csproj", "{F809D43E-D85E-43AA-A83C-33EF02C5152C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Model", "TeduShop.Model\Shop.Model.csproj", "{F809D43E-D85E-43AA-A83C-33EF02C5152C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeduShop.Data", "TeduShop.Data\TeduShop.Data.csproj", "{0B402C6C-F3E4-4569-87A9-C59CA559FF43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Data", "TeduShop.Data\Shop.Data.csproj", "{0B402C6C-F3E4-4569-87A9-C59CA559FF43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeduShop.Service", "TeduShop.Service\TeduShop.Service.csproj", "{D28CF2CB-6258-4C8B-B6EB-121EF22ABE42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Service", "TeduShop.Service\Shop.Service.csproj", "{D28CF2CB-6258-4C8B-B6EB-121EF22ABE42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeduShop.UnitTest", "TeduShop.UnitTest\TeduShop.UnitTest.csproj", "{3CB9CAD1-13B9-4C9C-B20D-937C6363365A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.UnitTest", "TeduShop.UnitTest\Shop.UnitTest.csproj", "{3CB9CAD1-13B9-4C9C-B20D-937C6363365A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeduShop.Web", "TeduShop.Web\TeduShop.Web.csproj", "{52BBFE85-D631-4F00-AC22-AE19B9BB6BC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Web", "TeduShop.Web\Shop.Web.csproj", "{52BBFE85-D631-4F00-AC22-AE19B9BB6BC9}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F809D43E-D85E-43AA-A83C-33EF02C5152C} = {F809D43E-D85E-43AA-A83C-33EF02C5152C}
 		{0B402C6C-F3E4-4569-87A9-C59CA559FF43} = {0B402C6C-F3E4-4569-87A9-C59CA559FF43}

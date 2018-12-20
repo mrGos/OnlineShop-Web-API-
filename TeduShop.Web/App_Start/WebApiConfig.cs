@@ -19,6 +19,8 @@ namespace TeduShop.Web
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
             new DefaultContractResolver { IgnoreSerializableAttribute = true };
 
+            // Web API configuration and services
+            // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
