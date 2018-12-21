@@ -2296,6 +2296,7 @@
     <Content Include="Assets\client\images\baa.jpg" />
     <Content Include="Assets\client\images\bag.jpg" />
     <Content Include="Assets\client\images\bag1.jpg" />
+    <Content Include="Assets\client\images\bank_logo.png" />
     <Content Include="Assets\client\images\bo.jpg" />
     <Content Include="Assets\client\images\bott.jpg" />
     <Content Include="Assets\client\images\bottle.jpg" />
@@ -6545,6 +6546,8 @@
     <Content Include="Scripts\jquery-validation\LICENSE.md" />
     <Content Include="Scripts\jquery-validation\package.json" />
     <Content Include="Scripts\jquery-validation\README.md" />
+    <Content Include="Views\ShoppingCart\ConfirmOrder.cshtml" />
+    <Content Include="Views\ShoppingCart\CancelOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
@@ -6565,21 +6568,21 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TeduShop.Common\TeduShop.Common.csproj">
+    <ProjectReference Include="..\TeduShop.Common\Shop.Common.csproj">
       <Project>{fd6baf41-2887-42f3-82fc-0df386b84472}</Project>
-      <Name>TeduShop.Common</Name>
+      <Name>Shop.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TeduShop.Data\TeduShop.Data.csproj">
+    <ProjectReference Include="..\TeduShop.Data\Shop.Data.csproj">
       <Project>{0b402c6c-f3e4-4569-87a9-c59ca559ff43}</Project>
-      <Name>TeduShop.Data</Name>
+      <Name>Shop.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TeduShop.Model\TeduShop.Model.csproj">
+    <ProjectReference Include="..\TeduShop.Model\Shop.Model.csproj">
       <Project>{f809d43e-d85e-43aa-a83c-33ef02c5152c}</Project>
-      <Name>TeduShop.Model</Name>
+      <Name>Shop.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TeduShop.Service\TeduShop.Service.csproj">
+    <ProjectReference Include="..\TeduShop.Service\Shop.Service.csproj">
       <Project>{d28cf2cb-6258-4c8b-b6eb-121ef22abe42}</Project>
-      <Name>TeduShop.Service</Name>
+      <Name>Shop.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

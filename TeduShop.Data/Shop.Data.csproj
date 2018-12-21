@@ -123,13 +123,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TeduShop.Common\TeduShop.Common.csproj">
+    <ProjectReference Include="..\TeduShop.Common\Shop.Common.csproj">
       <Project>{fd6baf41-2887-42f3-82fc-0df386b84472}</Project>
-      <Name>TeduShop.Common</Name>
+      <Name>Shop.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TeduShop.Model\TeduShop.Model.csproj">
+    <ProjectReference Include="..\TeduShop.Model\Shop.Model.csproj">
       <Project>{f809d43e-d85e-43aa-a83c-33ef02c5152c}</Project>
-      <Name>TeduShop.Model</Name>
+      <Name>Shop.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
