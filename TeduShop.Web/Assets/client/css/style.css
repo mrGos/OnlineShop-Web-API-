@@ -1262,7 +1262,7 @@ ul.face-in-to {
 
     .footer-bottom-cate h6 {
         font-size: 1.1em;
-        color: #000;
+        color: white;
         margin: 0 0 0.5em;
         font-weight: 700;
     }
@@ -1307,7 +1307,7 @@ ul.face-in-to {
     }
 
     .cate-bottom ul li p {
-        color: #000;
+        color: #1DBAA5;
         margin: 0;
         font-size: 1.1em;
     }
@@ -1324,6 +1324,7 @@ ul.face-in-to {
 
 .footer-bottom {
     padding: 2em 0 5em;
+    background: black;
 }
 /*--single--*/
 .share h5 {
@@ -2068,4 +2069,8 @@ select.in-drop {
     .homeProductImg {
         height: 300px;
     }
+}
+
+.txtAds {
+    color: white
 }
