@@ -88,6 +88,11 @@ namespace TeduShop.Web.Controllers
                 var detail = new OrderDetail();
                 detail.ProductID = item.ProductId;
                 detail.Quantity = item.Quantity;
+                //if (detail.Product.PromotionPrice.HasValue)
+                //{
+                //    detail.Price = item.Product.PromotionPrice.Value;
+                //}
+                //else { detail.Price = item.Product.Price; }
                 detail.Price = item.Product.Price;
                 orderDetails.Add(detail);
 
@@ -205,6 +210,7 @@ namespace TeduShop.Web.Controllers
                 ShoppingCartViewModel newItem = new ShoppingCartViewModel();
                 newItem.ProductId = productId;
                 newItem.Product = Mapper.Map<Product, ProductViewModel>(product);
+                if (newItem.Product.PromotionPrice.HasValue) newItem.Product.Price = newItem.Product.PromotionPrice.Value;
                 newItem.Quantity = 1;
                 cart.Add(newItem);
             }

@@ -66,8 +66,9 @@
                         <div class="dolor-grid">
                             @if (product.PromotionPrice.HasValue)
                             {
+                                <span class="reducedfrom">@product.Price.ToString("N0") VND<br></span>
                                 <span class="actual">@product.PromotionPrice.Value.ToString("N0") VND</span>
-                                <span class="reducedfrom">@product.Price.ToString("N0") VND</span>
+
                             }
                             else
                             {
@@ -100,9 +101,14 @@
                         <div class="dolor-grid">
                             @if (product.PromotionPrice.HasValue)
                             {
+                                <span class="reducedfrom">@product.Price.ToString("N0")<br></span>
                                 <span class="actual">@product.PromotionPrice.Value.ToString("N0")</span>
+
                             }
-                            <span class="reducedfrom">@product.Price.ToString("N0")</span>
+                            else
+                            {
+                                <span class="actual">@product.Price.ToString("N0")</span>
+                            }
                         </div>
                         <a class="now-get get-cart btnAddToCart" href="#" data-id="@product.ID">Mua hàng</a>
                         <div class="clearfix"> </div>
