@@ -7,19 +7,16 @@
         $scope.productCategories = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
-        $scope.getProductCategories = getProductCategories;
+        $scope.getProductCagories = getProductCagories;
         $scope.keyword = '';
 
-
-
         $scope.search = search;
+
         $scope.deleteProductCategory = deleteProductCategory;
 
         $scope.selectAll = selectAll;
 
         $scope.deleteMultiple = deleteMultiple;
-
-
 
         function deleteMultiple() {
             var listId = [];
@@ -31,7 +28,7 @@
                     checkedProductCategories: JSON.stringify(listId)
                 }
             }
-            apiService.del('/api/productcategory/deletemulti', config, function (result) {
+            apiService.del('api/productcategory/deletemulti', config, function (result) {
                 notificationService.displaySuccess('Xóa thành công ' + result.data + ' bản ghi.');
                 search();
             }, function (error) {
@@ -71,7 +68,7 @@
                         id: id
                     }
                 }
-                apiService.del('/api/productcategory/delete', config, function () {
+                apiService.del('api/productcategory/delete', config, function () {
                     notificationService.displaySuccess('Xóa thành công');
                     search();
                 }, function () {
@@ -80,35 +77,37 @@
             });
         }
 
-
         function search() {
-            getProductCategories();
+            getProductCagories();
         }
 
-        function getProductCategories(page) {
+        function getProductCagories(page) {
             page = page || 0;
             var config = {
                 params: {
                     keyword: $scope.keyword,
                     page: page,
-                    pageSize: 2
+                    pageSize: 20
                 }
             }
+            $scope.loading = true;
             apiService.get('/api/productcategory/getall', config, function (result) {
                 if (result.data.TotalCount == 0) {
-                    notificationService.displayWarning('Không có bản ghi nào được tìm thấy')
-                } else {
-                    //notificationService.displaySuccess('Đã tìm thấy ' + result.data.TotalCount + ' bảng ghi.')
+                    notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
                 }
                 $scope.productCategories = result.data.Items;
                 $scope.page = result.data.Page;
                 $scope.pagesCount = result.data.TotalPages;
                 $scope.totalCount = result.data.TotalCount;
+                $scope.loading = false;
+
             }, function () {
-                console.log('load product category failed.')
+                console.log('Load productcategory failed.');
+                $scope.loading = false;
+
             });
         }
 
-        $scope.getProductCategories();
+        $scope.getProductCagories();
     }
 })(angular.module('shop.product_categories'));

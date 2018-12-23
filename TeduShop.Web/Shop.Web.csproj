@@ -702,6 +702,7 @@
     <Content Include="app\shared\services\loginService.js" />
     <Content Include="app\shared\services\notificationService.js" />
     <Content Include="app\shared\views\baseView.html" />
+    <Content Include="app\shared\views\sideBar.html" />
     <Content Include="Assets\admin\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="Assets\admin\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="Assets\admin\bower_components\bootstrap\dist\css\bootstrap.css" />
@@ -2341,6 +2342,7 @@
     <Content Include="Assets\client\images\wa.jpg" />
     <Content Include="Assets\client\images\wat.jpg" />
     <Content Include="Assets\client\images\zoom.png" />
+    <Content Include="Assets\client\js\alertify.js" />
     <Content Include="Assets\client\js\common.js" />
     <Content Include="Assets\client\js\controllers\contact.js" />
     <Content Include="Assets\client\js\controllers\shoppingCart.js" />
@@ -2348,6 +2350,7 @@
     <Content Include="Assets\client\js\jquery.flexisel.js" />
     <Content Include="Assets\client\js\jquery.min.js" />
     <Content Include="Assets\client\js\jquery.wmuSlider.js" />
+    <Content Include="Assets\client\js\UI.js" />
     <Content Include="Assets\client\template\contact_template.html" />
     <Content Include="Assets\client\template\newuser.html" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -3749,6 +3752,16 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\alertify.js\dist\js\alertify.js" />
+    <Content Include="Scripts\alertify.js\dist\js\ngAlertify.js" />
+    <Content Include="Scripts\alertify.js\gulpfile.js" />
+    <Content Include="Scripts\alertify.js\karma-ci.conf.js" />
+    <Content Include="Scripts\alertify.js\karma.conf.js" />
+    <Content Include="Scripts\alertify.js\website\404.html" />
+    <Content Include="Scripts\alertify.js\website\angular.html" />
+    <Content Include="Scripts\alertify.js\website\bootstrap.html" />
+    <Content Include="Scripts\alertify.js\website\demo.html" />
+    <Content Include="Scripts\alertify.js\website\index.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -3779,10 +3792,25 @@
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-sanitize\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-sanitize\index.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="Scripts\angular-ui-select\dist\select.css" />
+    <Content Include="Scripts\angular-ui-select\dist\select.js" />
+    <Content Include="Scripts\angular-ui-select\dist\select.min.css" />
+    <Content Include="Scripts\angular-ui-select\dist\select.min.js" />
+    <Content Include="Scripts\angular-ui-select\docs\assets\app.js" />
+    <Content Include="Scripts\angular-ui-select\docs\assets\demo.js" />
+    <Content Include="Scripts\angular-ui-select\docs\assets\docs.css" />
+    <Content Include="Scripts\angular-ui-select\docs\assets\plunkr.js" />
+    <Content Include="Scripts\angular-ui-select\docs\index.html" />
+    <Content Include="Scripts\angular-ui-select\docs\partials\_footer.html" />
+    <Content Include="Scripts\angular-ui-select\docs\partials\_header.html" />
+    <Content Include="Scripts\angular-ui-select\index.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\AngularUI\ui-router.js" />
@@ -5207,6 +5235,7 @@
     <Content Include="Scripts\angular-local-storage.min.js.map" />
     <Content Include="Assets\client\images\Thumbs.db" />
     <Content Include="app\components\statistic\statistic.module.js" />
+    <Content Include="package-lock.json" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
@@ -5243,6 +5272,36 @@
     <Content Include="Scripts\angular-chart\package.json" />
     <Content Include="Scripts\angular-chart\PULL_REQUEST_TEMPLATE.md" />
     <Content Include="Scripts\angular-chart\README.md" />
+    <Content Include="Scripts\angular-ui-select\.bower.json" />
+    <Content Include="Scripts\angular-ui-select\bower.json" />
+    <Content Include="Scripts\angular-ui-select\CHANGELOG.md" />
+    <Content Include="Scripts\angular-ui-select\composer.json" />
+    <Content Include="Scripts\angular-ui-select\CONTRIBUTING.md" />
+    <Content Include="Scripts\angular-ui-select\deploy-docs.sh" />
+    <Content Include="Scripts\angular-ui-select\dist\select.min.css.map" />
+    <Content Include="Scripts\angular-ui-select\dist\select.min.js.map" />
+    <Content Include="Scripts\angular-ui-select\LICENSE" />
+    <Content Include="Scripts\angular-ui-select\package.json" />
+    <Content Include="Scripts\angular-ui-select\README.md" />
+    <Content Include="Scripts\angular-sanitize\.bower.json" />
+    <Content Include="Scripts\angular-sanitize\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\angular-sanitize\bower.json" />
+    <Content Include="Scripts\angular-sanitize\LICENSE.md" />
+    <Content Include="Scripts\angular-sanitize\package.json" />
+    <Content Include="Scripts\angular-sanitize\README.md" />
+    <Content Include="Scripts\alertify.js\.codeclimate.yml" />
+    <Content Include="Scripts\alertify.js\.coveralls.yml" />
+    <Content Include="Scripts\alertify.js\.eslintrc" />
+    <Content Include="Scripts\alertify.js\.npmignore" />
+    <Content Include="Scripts\alertify.js\.snyk" />
+    <Content Include="Scripts\alertify.js\bower.json" />
+    <Content Include="Scripts\alertify.js\CHANGELOG.md" />
+    <Content Include="Scripts\alertify.js\CONTRIBUTING.md" />
+    <Content Include="Scripts\alertify.js\ISSUE_TEMPLATE" />
+    <Content Include="Scripts\alertify.js\LICENSE.md" />
+    <Content Include="Scripts\alertify.js\package.json" />
+    <Content Include="Scripts\alertify.js\README.md" />
+    <Content Include="Scripts\alertify.js\update.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -6556,6 +6615,13 @@
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\alertify.js\dist\css\" />
+    <Folder Include="Scripts\alertify.js\src\" />
+    <Folder Include="Scripts\alertify.js\test\" />
+    <Folder Include="Scripts\alertify.js\website\css\" />
+    <Folder Include="Scripts\alertify.js\website\fonts\" />
+    <Folder Include="Scripts\alertify.js\website\images\" />
+    <Folder Include="Scripts\alertify.js\website\js\" />
     <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
@@ -6586,6 +6652,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\alertify.js\alertify-js.d.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
     <TypeScriptCompile Include="Scripts\ngbootbox\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\ngbootbox\typings\jquery\jquery.d.ts" />

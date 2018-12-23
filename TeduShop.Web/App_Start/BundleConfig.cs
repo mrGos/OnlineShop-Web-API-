@@ -16,7 +16,9 @@ namespace TeduShop.Web
                 "~/Scripts/mustache/mustache.js",
                 "~/Scripts/numeral/numeral.js",
                 "~/Scripts/jquery-validation/dist/jquery.validate.js",
-                 "~/Assets/client/js/common.js"
+                 "~/Assets/client/js/common.js",
+                  "~/Assets/client/js/alertify.js",
+                 "~/Assets/client/js/UI.js"
                 ));
 
             bundles.Add(new StyleBundle("~/css/base")

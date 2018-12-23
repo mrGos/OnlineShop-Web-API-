@@ -18,8 +18,8 @@ body {
     }
 
 .top-header {
-    background: #F97E76;
-    padding: 0.7em 0;
+    background-color: #333;
+    color: #fff;
 }
 
 .top-header-left {
@@ -68,6 +68,7 @@ ul.support {
 }
 /*----*/
 .bottom-header {
+    background-color: black;
     border-bottom: 1px solid #ddd;
     padding: 0.7em 0 1em;
 }
@@ -110,7 +111,7 @@ ul.support {
 .account a, .cart a, ul.login li a {
     text-decoration: none;
     font-size: 1em;
-    color: #000;
+    color: white;
 }
 
     .cart a span {
@@ -299,7 +300,6 @@ ul.cute li {
 }
 
 .banner-matter {
-    padding: 4em 2em;
 }
 
 .shoes-grid {
@@ -309,7 +309,6 @@ ul.cute li {
 
 .slide-grid {
     width: 100%;
-    border: 1px solid #ddd;
     margin: 2em 0;
 }
 
@@ -541,6 +540,7 @@ h5.latest-product {
 .chain {
     margin: 0 auto;
     padding: 3em 0;
+    height: 350px;
 }
 
 .chain-grid span.star {
@@ -839,6 +839,7 @@ p.m_text {
     -ms-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     margin: 0 auto;
+    height: 300px;
 }
 
 .grid-view-left .mask {
@@ -2062,5 +2063,9 @@ select.in-drop {
 
     .img-left-arrow {
         padding: 0 0 0 6.2em;
+    }
+
+    .homeProductImg {
+        height: 300px;
     }
 }
