@@ -55,6 +55,7 @@
 
             } else {
                 $(this).val('1');
+                console.log('return 1 cauz NAN');
             }
 
 
