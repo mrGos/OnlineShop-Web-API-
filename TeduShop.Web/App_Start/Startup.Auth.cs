@@ -7,10 +7,14 @@ using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using TeduShop.Common;
 using TeduShop.Data;
 using TeduShop.Model.Models;
+using TeduShop.Service;
+using TeduShop.Web.Infrastructure.Core;
 
 [assembly: OwinStartup(typeof(TeduShop.Web.App_Start.Startup))]
 
@@ -106,24 +110,39 @@ namespace TeduShop.Web.App_Start
                                                            user,
                                                            DefaultAuthenticationTypes.ExternalBearer);
                     context.Validated(identity);
-                }
+
+                //    var applicationGroupService = ServiceFactory.Get<IApplicationGroupService>();
+                //    var listGroup = applicationGroupService.GetListGroupByUserId(user.Id);
+                //    if (listGroup.Any(x => x.Name == CommonConstants.Administrator))
+                //    {
+                //        ClaimsIdentity identity = await userManager.CreateIdentityAsync(
+                //                       user,
+                //                       DefaultAuthenticationTypes.ExternalBearer);
+                //        context.Validated(identity);
+                //    }
+                //    else
+                //    {
+                //        context.Rejected();
+                //        context.SetError("invalid_group", "Bạn không phải là admin");
+                //    }
+                //}
                 else
                 {
-                    context.SetError("invalid_grant", "Tài khoản hoặc mật khẩu không đúng.'");
-                    context.Rejected();
+                        context.SetError("invalid_grant", "Tài khoản hoặc mật khẩu không đúng.'");
+                        context.Rejected();
+                    }
                 }
+            }
+
+
+
+            private static UserManager<ApplicationUser> CreateManager(IdentityFactoryOptions<UserManager<ApplicationUser>> options, IOwinContext context)
+            {
+                var userStore = new UserStore<ApplicationUser>(context.Get<TeduShopDbContext>());
+                var owinManager = new UserManager<ApplicationUser>(userStore);
+                return owinManager;
             }
         }
 
 
-
-        private static UserManager<ApplicationUser> CreateManager(IdentityFactoryOptions<UserManager<ApplicationUser>> options, IOwinContext context)
-        {
-            var userStore = new UserStore<ApplicationUser>(context.Get<TeduShopDbContext>());
-            var owinManager = new UserManager<ApplicationUser>(userStore);
-            return owinManager;
-        }
     }
-
-
-}

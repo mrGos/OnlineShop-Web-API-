@@ -251,9 +251,19 @@ namespace TeduShop.Web.Controllers
             {
                 foreach (var jitem in cartViewModel)
                 {
-                    if (item.ProductId == jitem.ProductId)
+                    try
                     {
-                        item.Quantity = jitem.Quantity;
+                        if (item.ProductId == jitem.ProductId)
+                        {
+                            item.Quantity = jitem.Quantity;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        return Json(new
+                        {
+                            status = false
+                        });
                     }
                 }
             }
