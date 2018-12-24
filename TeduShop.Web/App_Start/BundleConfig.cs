@@ -27,6 +27,7 @@ namespace TeduShop.Web
                 .Include("~/Content/themes/base/jquery-ui.css", new CssRewriteUrlTransform())
                 .Include("~/Assets/client/css/style.css", new CssRewriteUrlTransform())
                 .Include("~/Assets/client/css/custom.css", new CssRewriteUrlTransform())
+                 .Include("~/Assets/client/css/about.css", new CssRewriteUrlTransform())
                 );
             BundleTable.EnableOptimizations = bool.Parse(ConfigHelper.GetByKey("EnableBundles"));
         }

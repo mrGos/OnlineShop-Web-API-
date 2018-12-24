@@ -40,19 +40,22 @@
             var productid = parseInt($(this).data('id'));
             var price = parseFloat($(this).data('price'));
             if (isNaN(quantity) == false) {
-
                 var amount = quantity * price;
+                if (quantity > 0) {
+                    $('#amount_' + productid).text(numeral(amount).format('0,0'));
+                    $('#lblTotalOrder').text(numeral(cart.getTotalOrder()).format('0,0'));
+                    cart.updateAll();
+                } else {
+                    $('#amount_' + productid).text(numeral(amount).format('0,0'));
+                    $('#lblTotalOrder').text(numeral(0).format('0,0'));
+                    // $(this).data('price').text(0);
+                    cart.updateAll();
+                }
 
-                $('#amount_' + productid).text(numeral(amount).format('0,0'));
             }
-            else {
-                $('#amount_' + productid).text(0);
-            }
-
-            $('#lblTotalOrder').text(numeral(cart.getTotalOrder()).format('0,0'));
 
 
-            cart.updateAll();
+
 
         });
         $('#btnContinue').off('click').on('click', function (e) {

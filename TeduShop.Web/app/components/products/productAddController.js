@@ -23,13 +23,18 @@
         $scope.AddProduct = AddProduct;
 
         function AddProduct() {
-            $scope.product.MoreImages = JSON.stringify($scope.moreImages);
-            apiService.post('/api/product/create', $scope.product, function (result) {
-                notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
-                $state.go('products');
-            }, function (error) {
-                notificationService.displayError(result.data.Name + ' thêm mới không thành công.');
-            });
+            if ($scope.product.Price > 0 && $scope.product.OriginalPrice > 0) {
+                $scope.product.MoreImages = JSON.stringify($scope.moreImages);
+                apiService.post('/api/product/create', $scope.product, function (result) {
+                    notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
+                    $state.go('products');
+                }, function (error) {
+                    notificationService.displayError(result.data.Name + ' thêm mới không thành công.');
+                });
+            } else {
+                notificationService.displayError('thêm mới không thành công');
+            }
+
         }
 
         function loadProductCategory() {

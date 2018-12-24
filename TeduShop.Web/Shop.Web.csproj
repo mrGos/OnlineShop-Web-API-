@@ -604,7 +604,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -2283,6 +2282,7 @@
     <Content Include="Assets\admin\js\demo.js" />
     <Content Include="Assets\admin\js\pages\dashboard.js" />
     <Content Include="Assets\admin\js\pages\dashboard2.js" />
+    <Content Include="Assets\client\css\about.css" />
     <Content Include="Assets\client\css\bootstrap.css" />
     <Content Include="Assets\client\css\custom.css" />
     <Content Include="Assets\client\css\etalage.css" />
@@ -2295,6 +2295,7 @@
     <Content Include="Assets\client\images\b-arrow.png" />
     <Content Include="Assets\client\images\ba.jpg" />
     <Content Include="Assets\client\images\baa.jpg" />
+    <Content Include="Assets\client\images\about.jpg" />
     <Content Include="Assets\client\images\bag.jpg" />
     <Content Include="Assets\client\images\bag1.jpg" />
     <Content Include="Assets\client\images\bank_logo.png" />
