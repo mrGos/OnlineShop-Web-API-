@@ -37,27 +37,22 @@
         });
         $('.txtQuantity').off('keyup').on('keyup', function () {
             var quantity = parseInt($(this).val());
-            if (quantity > 1) {
-                var productid = parseInt($(this).data('id'));
-                var price = parseFloat($(this).data('price'));
-                if (isNaN(quantity) == false) {
-                    var amount = quantity * price;
-                    if (quantity > 0) {
-                        $('#amount_' + productid).text(numeral(amount).format('0,0'));
-                        $('#lblTotalOrder').text(numeral(cart.getTotalOrder()).format('0,0'));
-                        cart.updateAll();
-                    } else {
-                        $('#amount_' + productid).text(numeral(amount).format('0,0'));
-                        $('#lblTotalOrder').text(numeral(0).format('0,0'));
-                        // $(this).data('price').text(0);
-                        cart.updateAll();
-                    }
-
+            var productid = parseInt($(this).data('id'));
+            var price = parseFloat($(this).data('price'));
+            if (isNaN(quantity) == false) {
+                var amount = quantity * price;
+                if (quantity > 0) {
+                    $('#amount_' + productid).text(numeral(amount).format('0,0'));
+                    $('#lblTotalOrder').text(numeral(cart.getTotalOrder()).format('0,0'));
+                    cart.updateAll();
                 } else {
-                    console.log('NAN')
+                    $('#amount_' + productid).text(numeral(amount).format('0,0'));
+                    $('#lblTotalOrder').text(numeral(0).format('0,0'));
+                    // $(this).data('price').text(0);
+                    cart.updateAll();
                 }
-            }
 
+            }
 
 
 
@@ -192,7 +187,7 @@
         $.each($('.txtQuantity'), function (i, item) {
             cartList.push({
                 ProductId: $(item).data('id'),
-                Quantity: ($(item).val() < 1) ? 1 : $(item).val()
+                Quantity: $(item).val()
             });
         });
         $.ajax({
@@ -257,7 +252,6 @@
                 }
             }
         })
-    },
-
+    }
 }
 cart.init();
