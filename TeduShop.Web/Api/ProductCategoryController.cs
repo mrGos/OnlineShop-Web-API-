@@ -16,7 +16,7 @@ using System.Data.Entity.Validation;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/productcategory")]
-    [Authorize]
+    //[Authorize]
     public class ProductCategoryController : ApiControllerBase
     {
         #region Initialize
@@ -44,6 +44,23 @@ namespace TeduShop.Web.Api
                 return response;
             });
         }
+
+        [Route("clientgetallparents")]
+        [HttpGet]
+        public HttpResponseMessage ClientGetAll(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _productCategoryService.GetAll();
+
+                var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+                var reusult = responseData.Where(x => x.ParentID == null && x.Status == true);
+
+                var response = request.CreateResponse(HttpStatusCode.OK, reusult);
+                return response;
+            });
+        }
+
         [Route("getbyid/{id:int}")]
         [HttpGet]
         public HttpResponseMessage GetById(HttpRequestMessage request, int id)

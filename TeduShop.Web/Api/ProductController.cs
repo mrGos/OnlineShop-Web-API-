@@ -20,16 +20,18 @@ using TeduShop.Common;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/product")]
-    [Authorize]
+    //[Authorize]
     public class ProductController : ApiControllerBase
     {
         #region Initialize
         private IProductService _productService;
+        private IProductCategoryService _productCategoryService;
 
-        public ProductController(IErrorService errorService, IProductService productService)
+        public ProductController(IErrorService errorService, IProductService productService, IProductCategoryService productCategoryService)
             : base(errorService)
         {
             this._productService = productService;
+            this._productCategoryService = productCategoryService;
         }
 
         #endregion
@@ -201,5 +203,69 @@ namespace TeduShop.Web.Api
         }
 
 
+        //Mobile api
+        [Route("lastest")]
+        [HttpGet]
+        public HttpResponseMessage GetLastest(HttpRequestMessage request, int top)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _productService.GetLastest(top);
+
+                var responseData = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(model);
+
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+
+
+        [Route("gethotproduct")]
+        [HttpGet]
+        public HttpResponseMessage GetHotProduct(HttpRequestMessage request, int top)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _productService.GetHotProduct(top);
+
+                var responseData = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(model);
+
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+
+
+        [Route("getallbycategory")]
+        [HttpGet]
+        public HttpResponseMessage GetListProductByCategoryIdPaging(HttpRequestMessage request, int id, int page, int pagesize)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+
+                string sort = "popular";
+
+                int totalRow = 0;
+                var productModel = _productService.GetListProductByCategoryIdPaging(id, page, pagesize, sort, out totalRow);
+                var productViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(productModel);
+                int totalPage = (int)Math.Ceiling((double)totalRow / pagesize);
+
+                //
+
+                var category = _productCategoryService.GetById(id);
+
+                //ViewBag.Category = Mapper.Map<ProductCategory, ProductCategoryViewModel>(category);
+                var paginationSet = new PaginationSet<ProductViewModel>()
+                {
+                    Items = productViewModel,
+                    Page = page,
+                    TotalCount = totalRow,
+                    TotalPages = totalPage
+                };
+
+                var response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
+                return response;
+            });
+        }
     }
 }
