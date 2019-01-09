@@ -14,6 +14,7 @@ namespace TeduShop.Service
     {
         Order Create(ref Order order, List<OrderDetail> orderDetails);
         void UpdateStatus(int orderId);
+        IEnumerable<Order> GetAll();
         void Save();
     }
     public class OrderService : IOrderService
@@ -58,6 +59,11 @@ namespace TeduShop.Service
         public void Save()
         {
             _unitOfWork.Commit();
+        }
+
+        public IEnumerable<Order> GetAll()
+        {
+            return _orderRepository.GetAll();
         }
     }
 }
