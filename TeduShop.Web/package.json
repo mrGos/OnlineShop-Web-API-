@@ -13,7 +13,7 @@
     "mustache": "^3.0.0",
     "ng-ckeditor": "^2.0.5",
     "ngbootbox": "^0.2.0",
-    "npm": "^6.4.1",
+    "npm": "^6.13.4",
     "numerical": "^0.2.4"
   }
 }
