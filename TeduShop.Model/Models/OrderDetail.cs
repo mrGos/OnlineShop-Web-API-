@@ -6,6 +6,11 @@ namespace TeduShop.Model.Models
     [Table("OrderDetails")]
     public class OrderDetail
     {
+        public OrderDetail()
+        {
+
+        }
+
         [Key]
         [Column(Order =1)]
         public int OrderID { set; get; }

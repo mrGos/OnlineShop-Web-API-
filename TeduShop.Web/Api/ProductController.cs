@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Script.Serialization;
-using TeduShop.Common;
 using TeduShop.Model.Models;
 using TeduShop.Service;
 using TeduShop.Web.Infrastructure.Core;
 using TeduShop.Web.Infrastructure.Extensions;
 using TeduShop.Web.Models;
-using TeduShop.Common;
+
 
 namespace TeduShop.Web.Api
 {
